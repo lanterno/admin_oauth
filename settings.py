@@ -120,7 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
 
 env = environ.Env()
 
@@ -134,4 +135,4 @@ AUTH_URL = env('AUTH_URL')
 TOKEN_URL = env('TOKEN_URL')
 CLIENT_SECRET = env('CLIENT_SECRET')
 import django_heroku
-django_heroku.settings(locals(), staticfiles=False)
+django_heroku.settings(locals())
