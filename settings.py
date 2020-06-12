@@ -123,7 +123,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 env = environ.Env()
-environ.Env.read_env()
+
+USE_ENV_FILE = env("USE_ENV_FILE", default=True)
+if USE_ENV_FILE:
+    environ.Env.read_env()
 
 CLIENT_ID = env('CLIENT_ID')
 SCOPE = env('SCOPE')
