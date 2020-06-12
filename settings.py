@@ -133,3 +133,5 @@ SCOPE = env('SCOPE')
 AUTH_URL = env('AUTH_URL')
 TOKEN_URL = env('TOKEN_URL')
 CLIENT_SECRET = env('CLIENT_SECRET')
+import django_heroku
+django_heroku.settings(locals(), staticfiles=False)
